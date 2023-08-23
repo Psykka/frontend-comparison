@@ -1,0 +1,14 @@
+{
+  "name": "frontend-comparison",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/Psykka/frontend-comparison",
+  "author": "Psykka <36780964+Psykka@users.noreply.github.com>",
+  "license": "MPL-2.0",
+  "workspaces": [
+    "svelte",
+    "react",
+    "vue"
+  ]
+}
