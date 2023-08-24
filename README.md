@@ -20,13 +20,13 @@ yarn install
 
 ```bash
 # Start the Svelte application
-yarn workspace svelte start
+yarn workspace svelte dev
 
 # Start the React application
-yarn workspace react start
+yarn workspace react dev
 
 # Start the Vue application
-yarn workspace vue start
+yarn workspace vue dev
 ```
 
 ## License
