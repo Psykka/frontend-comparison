@@ -1,3 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 :root {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Karla', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    background: #f5f5f5;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.card {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+
+    width: 60vw;
+    justify-content: space-between;
+    border-radius: 3px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin: 30px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+
+    padding: 10px;
+    background: #cf3737;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #da4f4f;
+    transition: 0.2s;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
 }
