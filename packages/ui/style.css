@@ -41,6 +41,10 @@ html {
     align-items: center;
 }
 
+.card-content .completed {
+    text-decoration: line-through;
+}
+
 .title {
     margin: 30px;
     text-align: center;
