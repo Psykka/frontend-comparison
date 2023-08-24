@@ -1,0 +1,10 @@
+{
+    "name": "@frontend-comparison/ui",
+    "version": "1.0.0",
+    "exports": {
+        ".": {
+            "import": "./style.css",
+            "require": "./style.css"
+        }
+    }
+}

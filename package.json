@@ -7,6 +7,7 @@
   "author": "Psykka <36780964+Psykka@users.noreply.github.com>",
   "license": "MPL-2.0",
   "workspaces": [
+    "packages/*",
     "svelte",
     "react",
     "vue"

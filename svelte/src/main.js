@@ -1,3 +1,4 @@
+import '@frontend-comparison/ui'
 import App from './App.svelte'
 
 const app = new App({
