@@ -1,24 +1,40 @@
 <script>
     import Todo from "./components/Todo.svelte";
+    import CreateTodo from "./components/CreateTodo.svelte";
 
-    const todos = [
+    $: todos = [
         {
-            id: 1,
-            task: 'Fazer uma rotina de alongamento de 15 minutos',
-            completed: false
+            task: "Fazer apps com Svelte",
+            completed: false,
         },
         {
-            id: 2,
-            task: 'Programar JavaScript',
-            completed: false
-        }
-    ]
+            task: "Programar JavaScript",
+            completed: false,
+        },
+    ];
+
+    $: creatingTodo = false;
+
+    const deleteTodo = (e) => {
+        todos.splice(e.detail, 1);
+        todos = [...todos];
+    };
 </script>
 
 <h1 class="title">TODO Svelte</h1>
 
 <div class="content">
-    {#each todos as todo}
-        <Todo todo={todo} />
+    {#each todos as todo, i}
+        <Todo todo={{ ...todo, id: i }} on:deleteTodo={deleteTodo} />
     {/each}
+    {#if creatingTodo}
+        <CreateTodo bind:todos bind:creatingTodo />
+    {:else}
+        <button
+            class="btn btn-primary btn-create-todo"
+            on:click={() => (creatingTodo = true)}
+        >
+            Criar tarefa
+        </button>
+    {/if}
 </div>
