@@ -5,6 +5,7 @@
     const createTodo = (e) => {
         todos = [...todos, { task: e.target[0].value, completed: false }];
         e.target[0].value = "";
+        creatingTodo = false;
     };
 </script>
 
