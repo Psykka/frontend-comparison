@@ -2,9 +2,12 @@
     export let todos;
     export let creatingTodo;
 
-    const createTodo = (e) => {
-        todos = [...todos, { task: e.target[0].value, completed: false }];
-        e.target[0].value = "";
+    let newTask = "";
+
+    const createTodo = () => {
+        console.log("Creating todo", newTask);
+        todos = [...todos, { task: newTask, completed: false }];
+        newTask = "";
         creatingTodo = false;
     };
 </script>
@@ -20,13 +23,14 @@
                     type="text"
                     placeholder="Tarefa"
                     autocomplete="off"
+                    bind:value={newTask}
                 />
             </div>
             <div class="field actions-left">
                 <button
                     type="button"
                     class="btn btn-danger"
-                    on:click={() => creatingTodo = false}
+                    on:click={() => (creatingTodo = false)}
                 >
                     Cancelar
                 </button>
