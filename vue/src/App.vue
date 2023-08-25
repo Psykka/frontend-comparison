@@ -40,7 +40,7 @@ export default {
     <div class="card" v-for="(todo, i) in todos" :key="i">
       <Todo :todo="{ ...todo, id: i }" @deleteTodo="deleteTodo" />
     </div>
-    <CreateTodo v-if="creatingTodo" :creatingTodo="creatingTodo" v-bind="{ todos }" @disableCreateTodo="disableCreateTodo" />
+    <CreateTodo v-if="creatingTodo" v-bind="{ todos }" @disableCreateTodo="disableCreateTodo" />
     <button class="btn btn-primary btn-create-todo" @click="creatingTodo = true" v-else>
       Criar tarefa
     </button>

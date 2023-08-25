@@ -1,10 +1,6 @@
 <script>
 export default {
     props: {
-        creatingTodo: {
-            type: Boolean,
-            required: true
-        },
         todos: {
             type: Array,
             required: true

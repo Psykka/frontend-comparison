@@ -1,13 +1,3 @@
-<template>
-    <input type="checkbox" @click="completeTodo">
-    <div class="card-content">
-        <p :class="{ completed: todo.completed }">{{ todo.task }}</p>
-    </div>
-    <button class="btn btn-danger" @click="deleteTodo">
-        Delete
-    </button>
-</template>
-
 <script>
 export default {
     props: {
@@ -27,3 +17,13 @@ export default {
     emits: ['deleteTodo']
 }
 </script>
+
+<template>
+    <input type="checkbox" @click="completeTodo">
+    <div class="card-content">
+        <p :class="{ completed: todo.completed }">{{ todo.task }}</p>
+    </div>
+    <button class="btn btn-danger" @click="deleteTodo">
+        Delete
+    </button>
+</template>
