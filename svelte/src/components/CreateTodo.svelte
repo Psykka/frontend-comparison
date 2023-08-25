@@ -2,10 +2,6 @@
     export let todos;
     export let creatingTodo;
 
-    import { createEventDispatcher } from "svelte";
-
-    const dispatch = createEventDispatcher();
-
     const createTodo = (e) => {
         todos = [...todos, { task: e.target[0].value, completed: false }];
         e.target[0].value = "";
