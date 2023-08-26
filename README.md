@@ -6,7 +6,15 @@ This is a comparison of the frontend frameworks [Svelte](https://svelte.dev/), [
 
 ## Installation
 
-Clone the repository and install the dependencies.
+This project uses [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/).
+
+First install Node.js then install Yarn with the following command:
+
+```bash
+corepack enable
+```
+
+Clone the repository and install the dependencies:
 
 ```bash
 # Clone the repository
