@@ -26,6 +26,9 @@ export default {
     deleteTodo(id) {
       this.todos.splice(id, 1);
     },
+    completeTodo(id) {
+      this.todos[id].completed = !this.todos[id].completed;
+    },
     disableCreateTodo() {
       this.creatingTodo = false;
     }
@@ -38,10 +41,10 @@ export default {
 
   <div class="content">
     <div class="card" v-for="(todo, i) in todos" :key="i">
-      <Todo :todo="{ ...todo, id: i }" @deleteTodo="deleteTodo" />
+      <Todo :todo="{ ...todo, id: i }" @deleteTodo="deleteTodo" @completeTodo="completeTodo" />
     </div>
     <CreateTodo v-if="creatingTodo" v-bind="{ todos }" @disableCreateTodo="disableCreateTodo" />
-    <button class="btn btn-primary btn-create-todo" @click="creatingTodo = true" v-else>
+    <button v-else class="btn btn-primary btn-create-todo" @click="creatingTodo = true">
       Criar tarefa
     </button>
   </div>

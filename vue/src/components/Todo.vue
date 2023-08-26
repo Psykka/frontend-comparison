@@ -11,17 +11,19 @@ export default {
             this.$emit('deleteTodo', this.todo.id);
         },
         completeTodo() {
-            this.todo.completed = !this.todo.completed;
+            this.$emit('completeTodo', this.todo.id);
         }
     },
-    emits: ['deleteTodo']
+    emits: ['deleteTodo', 'completeTodo']
 }
 </script>
 
 <template>
     <input type="checkbox" @click="completeTodo">
     <div class="card-content">
-        <p :class="{ completed: todo.completed }">{{ todo.task }}</p>
+        <p :class="{ completed: todo.completed }">
+            {{ todo.task }}
+        </p>
     </div>
     <button class="btn btn-danger" @click="deleteTodo">
         Delete
